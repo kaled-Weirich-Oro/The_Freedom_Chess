@@ -1,0 +1,37 @@
+p {
+	font-size: 20px;
+	margin: 10px;
+}
+.titulo {
+	text-align: center;
+	font-size: 26px;
+	margin: 0px;
+}
+h1 {
+	text-align: center;
+}
+a {
+	color: red;
+	text-decoration: underline;
+}
+#menu {
+	background-color: #c2eceb;
+	font-size: 25px;
+}
+#comandos {
+	margin-top: 100px;
+}
+.texto_mutavel {
+	background-color: #f7eedd;
+}
+#comando_voz {
+	visibility: hidden;
+	display: none;
+}
+#digitacao {
+	visibility: hidden;
+	display: none;
+}
+li {
+	cursor: pointer;
+}

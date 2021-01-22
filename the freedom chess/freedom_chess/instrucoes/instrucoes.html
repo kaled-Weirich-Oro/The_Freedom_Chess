@@ -1,0 +1,88 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="UTF-8"/>
+      <link rel="icon" href="../slogan_freedom_chess.png">
+     <title>Instruções</title>
+ </head>
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- css -->
+  <link rel="stylesheet" type="text/css" href="instrucoes.css">
+<body onload="inicia_pagina()">
+<div class="container-fluid">
+<div class="row">
+   <div class="col-md-12 col-lg-12" id="titulo">
+	<h1>Instruções The freedom chess</h1>
+   </div>
+</div>
+<div class="row">
+<div class="col-md-3 col-lg-3 col-sm-4" id="menu">
+	<ul>
+		<li onclick="mostra_subtitulo('introducao')">Introdução</li>
+		<li onclick="mostra_subtitulo('comando_voz')">Comando de voz</li>
+		<li onclick="mostra_subtitulo('digitacao')">Digitação</li>
+	</ul>
+</div>
+<div class="col-sm-8 col-md-9 col-lg-9" id="meio">
+  <div id="introducao" class="texto_mutavel">
+  	<p class="titulo">Introducão</p>
+	<p>The freedom chess é um software web baseado nas experiências de um enxadrista deficiente, após inúmeros torneios, campeonatos e partidas amistosas e participações no <a href="http://www.fesporte.sc.gov.br/eventos/parajasc" target="_blank">Parajasc</a>, se pôde observar uma necessidade  de uma pessoa apenas para efetuar as jogadas ou verificar se estão de acordo, no caso dos deficientes visuais.
+ O The freedom chess nasceu para suprir esta necessidade, permitindo com que pessoas das mais diversas patologias tenham independência e autonomia para controlar todas as funções do jogo, desde movimentos das peças, edição do tempo dos jogadores e todas as funcionalidades do programa, utilizando-se do comando de voz, digitação ou pelo mouse.</p>
+    </div>  
+    <div id="comando_voz" class="texto_mutavel">
+    	<p class="titulo">Comando por voz</p>
+    	<p>Para realizar comandos de voz você apenas precisa selecionar ou clicar no botão “Falar”, localizado na parte superior esquerda da tela. Ao seleciona-lo logo abaixo aparecerá um botão circular vermelho, enquanto ele estiver aparecendo, você poderá executar todas as funcionalidades do jogo apenas realizando comando de voz.</p>
+    	<p class="titulo">Como jogar</p>
+    	 <p>A primeira frase será responsável pela coordenada da peça que deseja jogar, assim que o programa reconhecer, a coordenada aparecerá na caixa de texto "De: ", em seguida o programa esperará a coordenada de destino, para onde a peçã irá. Feito isso, o programa moverá a peça para o local desejado.</p>
+     		   <p>O programa reconhece as coodernadas padrões do xadrez que contêm, uma letra (de A a H) e um numero (de 1 a 8), exemplo: "a1", "b1", "c2', "f4", etc...</p>
+     <p style="background-color: #111111; color: #EEEEEE;"> Para facilitar os comandos de jogadas por voz, o programa, captura a frase dita pelo jogador e selecionará apenas a primeira letra possível (de A a H) e o primeiro numero possivel (de 1 a 8), e formará uma coordenada, exemplo: frase: "Ana 20" a coordenada será "a2", já se a frase for "bola 400" a cordenada será "b4", caso a frase dita for "Felipe 1" a coordenada será "f1".</p>
+ 		   <p class="titulo">Outros comandos por voz</p>
+ 		  <p>1.	<a href="#1" onclick="pinta_n_instrucao(1)">"Voltar jogada"</a></p>
+			 <p>2. <a href="#2" onclick="pinta_n_instrucao(2)">"Editar tempo" ou "Editar relógio"</a></p>
+			 <p>3. <a href="#3" onclick="pinta_n_instrucao(3)">"Salvar tempo" ou "Salvar relógio"</a></p>
+			 <p>4. <a href="#4" onclick="pinta_n_instrucao(4)">"Pausar" ou pausa"</a></p>
+			 <p>5. <a href="#5" onclick="pinta_n_instrucao(5)">"Limpar coordenadas" ou "apagar coordenadas"</a></p>
+			 <p>6. <a href="#6" onclick="pinta_n_instrucao(6)">"Opção 1"</a></p>
+			<p>7. <a href="#7" onclick="pinta_n_instrucao(7)">"Opção 2"</a></p>
+			<p>8. <a href="#8" onclick="pinta_n_instrucao(8)">"Opção 3"</a></p>
+    </div>
+    <div id="digitacao" class="texto_mutavel">
+    	<p class="titulo">Digitação</p>
+    	<p>Para utilizar-se do modo digitação você precisa apenas teclar uma vez a tecla "Tab", localizada na parte superior esquerda do seu teclado, acima da tecla "Fixa", assim que o cursor ficar piscando na caixa de texto "De", você já pode digitar a opção desejada, em seguida tecle novamente a tecla "Tab" e sua opção será acionada. baixo uma lista de comandos executados pelo texto digitado.</p>
+    	<p class="titulo">Como jogar</p>
+    	<p>Para jogar pelo teclado o jogador apenas precisa inserir na caixa de texto "De: " a coordenada da peça que deseja mover. Em seguida teclando "Tab" o jogador deve digitar a coordenada de destino, seguida da tecla "Tab" novamente que efetuará a jogada, caso seja possivel. exemplos: "De 'e2'", "Para 'e4'", "De: 'e7'", "Para: 'e5'", etc...</p>
+    	<p class="titulo">Outros comandos</p>
+    	<p>Obs: os seguintres comandos só funcionarão se digitados em letras minúsculas ou apenas com a primeira letra em maiúsculas.</p>
+    	<p>1. <a href="#1" onclick="pinta_n_instrucao(1)">"Voltar" ou "voltar jogada"</a></p>
+		<p>2. <a href="#2" onclick="pinta_n_instrucao(2)">"tempo" ou "Relogio" (editar)</a></p> 
+		<p>3. <a href="#3" onclick="pinta_n_instrucao(3)">"Salvar" ou "Salvar tempo" ou "salvar relógio"</a></p>
+		<p>4. <a href="#4" onclick="pinta_n_instrucao(4)">"Pausar"</a></p>
+		<p>5. </p>
+		<p>6. <a href="#6" onclick="pinta_n_instrucao(6)">"opção 1" ou "op 1"</a></p>
+		<p>7. <a href="#7" onclick="pinta_n_instrucao(7)">"opção 2" ou "op 2"</a></p>
+		<p>8. <a href="#8" onclick="pinta_n_instrucao(8)">"opção 3" ou "op 3"</a></p>
+    </div>
+    <p class="titulo" id="comandos">Comandos</p>
+    <p id="1">1. volta jogada – a última jogada é desfeita, dando a oportunidade do jogador refazer a jogada.</p>
+<p id="2">2. Editar tempo – o relógio entra em estado de edição, onde o jogador pode selecionar um tempo para ambos os jogadores.</p>
+<p id="3">3. Salvar tempo – Salva o tempo editado para o relógio. (caso esteja em estado de edição).</p>
+<p id="4">4. Pausar – Pausa o tempo dos relógios.</p>
+<p id="5">5. apagar coordenadas – caso o jogador tenha selecionado indesejavelmente as coordenadas da sua peça, este é cancelado e o jogador deve repetir as coordenadas da sua peça.</p>
+<p id="6">6. Opção 1 - Seleciona a opção “Reproduzir a página sonoramente” caso esteja desativada, e desativa caso esteja ativada. Obs: a qualquer momento e lugar da página está opção será ativada ou desativada pela tecla "!"</p>
+<p id="7">7. Opção 2 - Seleciona a opção “utilizar nomes padrões” caso esteja desativada, e desativa caso esteja ativada. Obs: a qualquer momento e lugar da página está opção será ativada ou desativada pela tecla "@"</p>
+<p id="8">8. Opção 3 - Seleciona a opção “Auxilio jogadas” caso esteja desativada, e desativa caso esteja ativada. Obs: a qualquer momento e lugar da página está opção será ativada ou desativada pela tecla "#"</p>
+</div>
+</div>
+</div>
+
+	
+	  <script type="text/javascript" src="instrucoes.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

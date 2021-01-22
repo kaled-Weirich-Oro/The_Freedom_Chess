@@ -1,0 +1,30 @@
+p {
+	font-size : 20px;
+}
+.titulo_instrucoes {
+	font-size: 30px;
+	text-align: center;
+}
+.instrucoes_subtitulos {
+	font-size: 26px;
+	margin: 10px;
+	text-align: left;
+	font-weight: bold;
+}
+.texto_subtitulos_instrucoes {
+	background-color: #FFBF00;
+}
+.subtiulo_opcoes {
+	text-align: center;
+	font-weight: bold;
+	background-color: #AADBFD;
+}
+.titulo_revisar_jogo
+{
+	text-align: center;
+	font-weight: bold;
+	background-color: #ea9393;
+}
+a {
+	background-color: #badbed;
+}

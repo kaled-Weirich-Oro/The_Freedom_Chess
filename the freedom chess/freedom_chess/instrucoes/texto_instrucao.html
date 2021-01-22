@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="UTF-8"/>
+     <title>instruções</title>
+ </head>
+ <link rel="stylesheet" type="text/css" href="instrucoes.css">
+ <body>
+ <h2 class="titulo_instrucoes">Instruções</h2>
+ <p>The freedom chess é um software web baseado nas experiências de um enxadrista deficiente, após inúmeros torneios, campeonatos e partidas amistosas e participações no <a href="http://www.fesporte.sc.gov.br/eventos/parajasc" target="_blank">Parajasc</a>, se pôde observar uma necessidade  de uma pessoa apenas para efetuar as jogadas ou verificar se estão de acordo, no caso dos deficientes visuais.
+ O The freedom chess nasceu para suprir esta necessidade, permitindo com que pessoas das mais diversas patologias tenham independência e autonomia para controlar todas as funções do jogo, desde movimentos das peças, edição do tempo dos jogadores e todas as funcionalidades do programa, utilizando-se do comando de voz, digitação ou pelo mouse.</p>
+ <p class="instrucoes_subtitulos">Comando de voz</p>
+<p class="texto_subtitulos_instrucoes">Para realizar comandos de voz você apenas precisa selecionar ou clicar no botão “Falar”, localizado na parte superior esquerda da tela. Ao seleciona-lo logo abaixo aparecerá um botão circular vermelho, enquanto ele estiver aparecendo, você poderá executar todas as funcionalidades do jogo apenas realizando comando de voz.
+Abaixo a lista de comando executado por voz:
+</p>
+ <p class="titulo_instrucoes">Jogadas por voz : </p>
+ <p>A primeira frase será responsável pela coordenada da peça que deseja jogar, assim que o programa reconhecer, a coordenada aparecerá na caixa de texto "De: ", em seguida o programa esperará a coordenada de destino, para onde a peçã irá. Feito isso, o programa moverá a peça para o local desejado.</p>
+ <p>O programa reconhece as coodernadas padrões do xadrez que contêm, uma letra (de A a H) e um numero (de 1 a 8), exemplo: "a1", "b1", "c2', "f4", etc...</p>
+ <p> Para facilitar os comandos de jogadas por voz, o programa, captura a frase dita pelo jogador e selecionará apenas a primeira letra possível (de A a H) e o primeiro numero possivel (de 1 a 8), e formará uma coordenada, exemplo: frase: "Ana 20" a coordenada será "a2", já se a frase for "bola 400" a cordenada será "b4", caso a frase dita for "Felipe 1" a coordenada será "f1".</p>
+
+ <p>1.	<a href="#1" onclick="pinta_n_instrucao(1)">"Voltar jogada"</a></p>
+ <p>2. <a href="#2" onclick="pinta_n_instrucao(2)">"Editar tempo" ou "Editar relógio"</a></p>
+ <p>3. <a href="#3" onclick="pinta_n_instrucao(3)">"Salvar tempo" ou "Salvar relógio"</a></p>
+ <p>4. <a href="#4" onclick="pinta_n_instrucao(4)">"Pausar" ou pausa"</a></p>
+ <p>5. <a href="#5" onclick="pinta_n_instrucao(5)">"Limpar coordenadas" ou "apagar coordenadas"</a></p>
+ <p>6. <a href="#6" onclick="pinta_n_instrucao(6)">"Opção 1"</a></p>
+<p>7. <a href="#7" onclick="pinta_n_instrucao(7)">"Opção 2"</a></p>
+<p>8. <a href="#8" onclick="pinta_n_instrucao(8)">"Opção 3"</a></p>
+<p class="instrucoes_subtitulos">Digitação</p>
+<p class="texto_subtitulos_instrucoes">Para utilizar-se do modo digitação você precisa apenas teclar uma vez a tecla "Tab", localizada na parte superior esquerda do seu teclado, acima da tecla "Fixa", assim que o cursor ficar piscando na caixa de texto "De", você já pode digitar a opção desejada, em seguida tecle novamente a tecla "Tab" e sua opção será acionada. baixo uma lista de comandos executados pelo texto digitado.</p>
+<p>1. <a href="#1" onclick="pinta_n_instrucao(1)">"Voltar" ou "voltar jogada"</a></p>
+<p>2. <a href="#2" onclick="pinta_n_instrucao(2)">"tempo" ou "Relogio" (editar)</a></p> 
+<p>3. <a href="#3" onclick="pinta_n_instrucao(3)">"Salvar" ou "Salvar tempo" ou "salvar relógio"</a></p>
+<p>4. <a href="#4" onclick="pinta_n_instrucao(4)">"Pausar"</a></p>
+<p>5. </p>
+<p>6. <a href="#6" onclick="pinta_n_instrucao(6)">"opção 1" ou "op 1"</a></p>
+<p>7. <a href="#7" onclick="pinta_n_instrucao(7)">"opção 2" ou "op 2"</a></p>
+<p>8. <a href="#8" onclick="pinta_n_instrucao(8)">"opção 3" ou "op 3"</a></p>
+
+ 	<p id="1">1. volta jogada – a última jogada é desfeita, dando a oportunidade do jogador refazer a jogada.</p>
+<p id="2">2. Editar tempo – o relógio entra em estado de edição, onde o jogador pode selecionar um tempo para ambos os jogadores.</p>
+<p id="3">3. Salvar tempo – Salva o tempo editado para o relógio. (caso esteja em estado de edição).</p>
+<p id="4">4. Pausar – Pausa o tempo dos relógios.</p>
+<p id="5">5. apagar coordenadas – caso o jogador tenha selecionado indesejavelmente as coordenadas da sua peça, este é cancelado e o jogador deve repetir as coordenadas da sua peça.</p>
+<p id="6">6. Opção 1 - Seleciona a opção “Reproduzir a página sonoramente” caso esteja desativada, e desativa caso esteja ativada. Obs: a qualquer momento e lugar da página está opção será ativada ou desativada pela tecla "!"</p>
+<p id="7">7. Opção 2 - Seleciona a opção “utilizar nomes padrões” caso esteja desativada, e desativa caso esteja ativada. Obs: a qualquer momento e lugar da página está opção será ativada ou desativada pela tecla "@"</p>
+<p id="8">8. Opção 3 - Seleciona a opção “Auxilio jogadas” caso esteja desativada, e desativa caso esteja ativada. Obs: a qualquer momento e lugar da página está opção será ativada ou desativada pela tecla "#"</p>
+
+<p class="titulo_instrucoes">Menu opções</p>
+<p class="subtiulo_opcoes">Opção 1 - Reproduzir pagina sonoramente</p>
+<p>A opção de reproduzir a página sonoramente é índicada para deficientes visuais, reproduz em aúdio as casas, peças, jogadas, tempo dos jogadores, botões e opções do jogo, apenas passando o mouse sobre tais objetos da tela. para ativa-la ou desativa-la, basta apenas teclar "!", ou seguir as instruções acima.</p>
+<p class="subtiulo_opcoes">Opção 2 - Utilizar nomes padrões</p>
+<p>A opção de utilizar nomes padões <b>funcionara somente se a opção 1 estiver ativa</b> converterá as letras do tabuleiro em nomes comumente utilizados em partidas para deficientes visuas, a opção facilita o entedimento auditivo das coordenadas. Para ativa-la ou desativa-la, basta apenas teclar "@", ou seguir as instruções acima.</p>
+<p class="subtiulo_opcoes">Opção 3 - Auxilio jogada</p>
+<p>A opção de auxilio jogadas é indicada para jogadores iniciantes, ou aqueles que desejam jogar uma partida tranquila e sem preocupar-se com possíveis erros de coordenadas, a opção mostra quais são as casas que a peça selecionada poderá se mover. Mesmo as jogadas impossíveis como uma jogada que deixará o jogador em xeque <b>serão mostradas, sendo de responsabilidade do adversário cobra-la.</b> para ativa-la ou desativa-la, basta apenas teclar "#", ou seguir as instruções acima.</p>
+<p class="titulo_revisar_jogo">Botão revisar jogo</p>
+<p>O botão revisar jogo <b>funcionará apenas caso a opção 1 estiver ativada</b>, auxilia o deficiente visuais a se situar no jogo, reproduz sonoramente todas as peças no tabuleiro e suas respectivas casas. pode ser acionada ao teclar "espaço", ou clique no botão "Revisar jogo" localizada na parte inferior esquerda da página.</p>
+ <script type="text/javascript" src="instrucoes.js"></script>
+ </body>
+ </html>

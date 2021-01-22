@@ -1,0 +1,254 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="UTF-8"/>
+      <link rel="icon" href="slogan_freedom_chess.png">
+     <title>The freedom chess</title>
+
+<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.sitedokaled.com/freedom_chess/index.html">
+	<meta property="og:description" content="A liberdade no xadrez!">
+	<meta property="og:title" content="The Freedom Chess">
+	<meta property="og:site_name" content="Site do Kaled">
+	<meta property="og:image" content="http://i68.tinypic.com/34o6a74.png">
+	<meta property="fb:app_id" content="661348147539102">
+	<!-- bootstrap icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="voz.css">
+ </head>
+
+<body onload="inicia_pagina()">
+<div class="container-fluid">
+ <div id="fundo"></div>
+ <div class="row">
+ 	<div class="col-sm-9 col-md-9 col-lg-9">
+	<h2 style="margin-left:55%; margin-top: 5px;">The Freedom Chess</h2>
+	</div>
+	<div class="col-sm-3 col-md-3 col-lg-3">
+		<a href="https://www.sitedokaled.com/freedom_chess/instrucoes/instrucoes.html" target="_blank"><h3 style="text-align: center; color: #CC3333; margin-top: 5px;">Instruções
+		</h3></a>
+	</div>
+ </div>
+
+	<div class="col-lg-3 col-md-4 lado_menu">
+	<div id="pecas_promovidas_esquerda" class="pecas_promovidas">
+<button type="button" id="btn_falar_peca" class="btn btn-danger" onmouseenter="repete_frase('Botão falar peça promovida')" x-webkit-speech>Falar nome Peça</button>
+<div id="frase_dita_peca">Frase dita: </div>
+<button type="button" id="rec_peca" class="hidden-lg hidden-md hidden-sm hidden-xs"></button>
+	<div style="margin-top: 10px; margin-left: 15px; margin-bottom:25px;">
+	<h3 style="display: inline;">Peca promovida: </h3><input type="text" id="fala_peca_promovida" tabindex="-1" onchange="digita_peca_promovida()" tabindex="1">
+	</div>
+	</div>
+	<button type="button" id="btn" class="btn btn-danger" onmouseenter="repete_frase('Botão falar')" x-webkit-speech>Falar     <i class="fa fa-microphone icones"></i></button>
+	 <span class="glyphicon glyphicon-exclamation-sign icones_informacao">
+	 	<div class="informacoes" id="texto_informacao_falar">O botão falar permite utilizar-se de comando por voz. para mais informações acesse <a href="https://www.sitedokaled.com/freedom_chess/instrucoes/instrucoes.html?codigo=1" target="_blank">Instruções comando de voz</a></div>
+	 </span>
+	<div id="frase_dita">Frase dita: </div>
+	<button type="button" id="rec" class="hidden-lg hidden-md hidden-sm hidden-xs"></button>
+	<h3>De: </h3><input type="text" id="result" onfocusout="valida_casa();repete_cordenada();mostra_possiveis_jogadas();digita_opcoes();" tabindex="1">
+	<span class="glyphicon glyphicon-exclamation-sign icones_informacao">
+	 	<div class="informacoes" id="texto_informacao_digitacao">Aqui pode se jogar e acessar todas as opções do jogo por comandos de digitação. Para mais informações acesse <a href="https://www.sitedokaled.com/freedom_chess/instrucoes/instrucoes.html?codigo=2" target="_blank">Instruções digitação</a></div>
+	 </span>
+	<button type="button" id="apagar_cordenada" onmouseenter="repete_frase('botão apagar coordenada')" onclick="apagar_cordenada()" class="btn btn-primary" tabindex="3">Apagar Coordenada <i class="glyphicon glyphicon-trash icones"></i></button>
+	<span class="glyphicon glyphicon-exclamation-sign icones_informacao"  style="margin-left: 5px;">
+	 	<div class="informacoes" id="texto_informacao_apagar_coordenada">Apaga o texto da caixa de texto "De: "</div>
+	 </span>
+	<h3>Para: </h3><input type="text" id="result2" onfocusout="digita_jogada()" tabindex="2">
+	<p><button type="button" id="voltar_jogada" class=".btn" onclick="volta_jogada()" onmouseenter="repete_frase('Botão voltar jogada')">Voltar jogada <i class="fa fa-reply icones"></i></button></p>
+	<div id="opcoes_id">
+	<h1>Opções</h1>
+	<div id="opcao1">
+		<input type="checkbox" id="opcao_cego">
+	<h3 class="opcoes" onclick="opcao1_check()" onmouseenter="repete_frase('Reproduzir a pagina sonóramente.')">Reproduzir a pagina sonoramente.     (!)
+	<span class="glyphicon glyphicon-exclamation-sign icones_informacao"  style="margin-left: 3px;">
+	 	<div class="informacoes" id="texto_informacao_opcao1">Reproduz em aúdio as coordenadas, peças, jogadas, tempo dos jogadores e opções do jogo.</div>
+	 </span>
+	 </h3>
+	</div>
+	<div id="opcao2">
+	<input type="checkbox" id="opcao_nomes_padrao" />
+	<h3 class="opcoes" onclick="opcao2_check()" onmouseenter="repete_frase('utilizar nomes padrões')">Utilizar nomes padrões.         (@)
+	<span class="glyphicon glyphicon-exclamation-sign icones_informacao">
+	 	<div class="informacoes" id="texto_informacao_opcao2" style="width: 400px;">Utiliza nomes para representar coordenadas, comumente utilizados em campeonatos para deficientes visuais, FUNCIONARÁ APENAS CASO A OPÇÃO "Reproduzir página sonoramente" ESTIVER ATIVADA.</div>
+	 </span>
+	</h3>
+	</div>
+	<div id="opcao3">
+	<input type="checkbox" id="opcao_auxilia_jogada" />
+	<h3 class="opcoes" onclick="opcao3_check()" onmouseenter="repete_frase('Auxilio jogadas')">Auxilio jogadas (#)
+<span class="glyphicon glyphicon-exclamation-sign icones_informacao">
+	 	<div class="informacoes" id="texto_informacao_opcao3" style="width: 400px;">Mostra as coordenadas pra onde a peça selecionada pode se mover. NÃO TRATA JOGADAS IMPOSSIVEIS.</div>
+	 </span>
+	</h3>
+	</div>	
+	</div>
+	<button onclick="reproduz_situacao_jogo()" id="btn_revisar_jogo" onmouseenter="repete_frase('Revisar jogo')" class="btn-danger">revisar jogo <i class="glyphicon glyphicon-bullhorn icones_informacao"></i></button>
+	<span class="glyphicon glyphicon-exclamation-sign icones_informacao">
+		<div class="informacoes" id="texto_informacao_revisar_jogo" style="width: 400px; bottom: 30px;">Reproduz em audio todas as peças presentes no jogo. Funcionará APENAS caso a opção "Reproduzir pagina sonoramente" estiver ativada. Pode ser acionada através da tecla "ESPAÇO".</div>
+	</span>
+	<div id="var_aux">
+	<p id="cord_x"></p>
+	<p id="cord_y"></p>
+	<p id="conteudo_pecay"></p>
+	<p id="cor_pecax"></p>
+	<p id="cor_pecay"></p>
+	<p id="conteudo_pecax"></p>
+	<p id="jogada">0</p>
+	<p id="en_passant">false</p>
+	<p id="peao_en_passant">0</p>
+	<p id="peca_pinta_adv"></p>
+	<p id="seta_relogio">0</p>
+	<p id="rock_preto">0</p>
+	<p id="rock_branco">0</p>
+		</div>
+	</div>
+	<div class="col-lg-6 col-md-5">
+	<table id="promocao" class="pecas_promovidas">
+	  <tr>
+			<td><p id="ptorre" class="peca_promocao" onclick="escolhe_peca_promovida('♖')" onmouseenter="repete_frase('Promove Torre')">&#9814</p></td>  <!-- torre -->
+			<td><p id="pcavalo" class="peca_promocao" onclick="escolhe_peca_promovida('♘')" onmouseenter="repete_frase('Promove Cavalo')">&#9816</p></td>  <!-- cavalo -->
+			<td><p id="pbispo" class="peca_promocao" onclick="escolhe_peca_promovida('♝')" onmouseenter="repete_frase('Promove bispo')">&#9821</p></td>  <!-- bispo -->
+			<td><p id="pdama" class="peca_promocao" onclick="escolhe_peca_promovida('♛')" onmouseenter="repete_frase('Promove Dama')">&#9819</p></td>  <!-- dama -->
+	  </tr>
+	</table>
+	<table id="tabuleiro">
+	<tr>
+	<td class="branco" id="18" onclick="joga_mouse(18)" onmouseenter="aux_texto_fala('a8', 18)"><p class="peca_preta">&#9814</p></td>
+	<td class="preto" id="28" onclick="joga_mouse(28)" onmouseenter="aux_texto_fala('b8', 28)"><p class="peca_preta">&#9816</p></td>
+	<td class="branco" id="38" onclick="joga_mouse(38)" onmouseenter="aux_texto_fala('c8', 38)"><p class="peca_preta">&#9821</p></td>
+	<td class="preto" id="48" onclick="joga_mouse(48)" onmouseenter="aux_texto_fala('d8', 48)"><p class="peca_preta">&#9819</p></td>
+	<td class="branco" id="58" onclick="joga_mouse(58)" onmouseenter="aux_texto_fala('e8', 58)"><p class="peca_preta">&#9812</p></td>
+	<td class="preto" id="68" onclick="joga_mouse(68)" onmouseenter="aux_texto_fala('f8', 68)"><p class="peca_preta">&#9821</p></td>
+	<td class="branco" id="78" onclick="joga_mouse(78)" onmouseenter="aux_texto_fala('g8', 78)"><p class="peca_preta">&#9816</p></td>
+	<td class="preto" id="88" onclick="joga_mouse(88)" onmouseenter="aux_texto_fala('h8', 88)"><p class="peca_preta">&#9814</p></td>
+	<td class="tabuleiro_numeros">8</td>
+	</tr>
+	<tr>
+	<td class="preto" id="17" onclick="joga_mouse(17)" onmouseenter="aux_texto_fala('a7', 17)"><p class="peca_preta">&#9823</p></td>
+	<td class="branco" id="27" onclick="joga_mouse(27)" onmouseenter="aux_texto_fala('b7', 27)"><p class="peca_preta">&#9823</p></td>
+	<td class="preto" id="37" onclick="joga_mouse(37)" onmouseenter="aux_texto_fala('c7', 37)"><p class="peca_preta">&#9823</p></td>
+	<td class="branco" id="47" onclick="joga_mouse(47)" onmouseenter="aux_texto_fala('d7', 47)"><p class="peca_preta">&#9823</p></td>
+	<td class="preto" id="57" onclick="joga_mouse(57)" onmouseenter="aux_texto_fala('e7', 57)"><p class="peca_preta">&#9823</p></td>
+	<td class="branco" id="67" onclick="joga_mouse(67)" onmouseenter="aux_texto_fala('f7', 67)"><p class="peca_preta">&#9823</p></td>
+	<td class="preto" id="77" onclick="joga_mouse(77)" onmouseenter="aux_texto_fala('g7', 77)"><p class="peca_preta">&#9823</p></td>
+	<td class="branco" id="87" onclick="joga_mouse(87)" onmouseenter="aux_texto_fala('h7', 87)"><p class="peca_preta">&#9823</p></td>
+	<td class="tabuleiro_numeros">7</td>
+	</tr>
+	<tr>
+	<td class="branco" onclick="joga_mouse(16)" onmouseenter="aux_texto_fala('a6', 16)" id="16"><p> </p></td>
+	<td class="preto" onclick="joga_mouse(26)" id="26" onmouseenter="aux_texto_fala('b6', 26)"><p> </p></td>
+	<td class="branco" onclick="joga_mouse(36)" id="36" onmouseenter="aux_texto_fala('c6', 36)"><p> </p></td>
+	<td class="preto" onclick="joga_mouse(46)" id="46" onmouseenter="aux_texto_fala('d6', 46)"><p> </p></td>
+	<td class="branco" onclick="joga_mouse(56)" id="56" onmouseenter="aux_texto_fala('e6', 56)"><p> </p></td>
+	<td class="preto" onclick="joga_mouse(66)" id="66" onmouseenter="aux_texto_fala('f6', 66)"><p> </p></td>
+	<td class="branco" onclick="joga_mouse(76)" id="76" onmouseenter="aux_texto_fala('g6', 76)"><p> </p></td>
+	<td class="preto" onclick="joga_mouse(86)" id="86" onmouseenter="aux_texto_fala('h6', 86)"><p> </p></td>
+	<td class="tabuleiro_numeros">6</td>
+	</tr>
+	<tr>
+	<td class="preto" id="15" onclick="joga_mouse(15)" onmouseenter="aux_texto_fala('a5', 15)"><p> </p></td>
+	<td class="branco" id="25" onclick="joga_mouse(25)" onmouseenter="aux_texto_fala('b5', 25)"><p> </p></td>
+	<td class="preto" id="35" onclick="joga_mouse(35)" onmouseenter="aux_texto_fala('c5', 35)"><p> </p></td>
+	<td class="branco" id="45" onclick="joga_mouse(45)" onmouseenter="aux_texto_fala('d5', 45)"><p> </p></td>
+	<td class="preto" id="55" onclick="joga_mouse(55)" onmouseenter="aux_texto_fala('e5', 55)"><p> </p></td>
+	<td class="branco" id="65" onclick="joga_mouse(65)" onmouseenter="aux_texto_fala('f5', 65)"><p> </p></td>
+	<td class="preto" id="75" onclick="joga_mouse(75)" onmouseenter="aux_texto_fala('g5', 75)"><p> </p></td>
+	<td class="branco" id="85" onclick="joga_mouse(85)" onmouseenter="aux_texto_fala('h5', 85)"><p> </p></td>
+	<td class="tabuleiro_numeros">5</td>
+	</tr>
+	<tr>
+	<td class="branco" id="14" onclick="joga_mouse(14)" onmouseenter="aux_texto_fala('a4', 14)"><p> </p></td>
+	<td class="preto" id="24" onclick="joga_mouse(24)" onmouseenter="aux_texto_fala('b4', 24)"><p> </p></td>
+	<td class="branco" id="34" onclick="joga_mouse(34)" onmouseenter="aux_texto_fala('c4', 34)"><p> </p></td>
+	<td class="preto" id="44" onclick="joga_mouse(44)" onmouseenter="aux_texto_fala('d4', 44)"><p> </p></td>
+	<td class="branco" id="54" onclick="joga_mouse(54)" onmouseenter="aux_texto_fala('e4', 54)"><p> </p></td>
+	<td class="preto" id="64" onclick="joga_mouse(64)" onmouseenter="aux_texto_fala('f4', 64)"><p> </p></td>
+	<td class="branco" id="74" onclick="joga_mouse(74)" onmouseenter="aux_texto_fala('g4', 74)"><p> </p></td>
+	<td class="preto" id="84" onclick="joga_mouse(84)" onmouseenter="aux_texto_fala('h4', 84)"><p> </p></td>
+	<td class="tabuleiro_numeros">4</td>
+	</tr>
+	<tr>
+	<td class="preto" id="13" onclick="joga_mouse(13)" onmouseenter="aux_texto_fala('a3', 13)"><p> </p></td>
+	<td class="branco" id="23" onclick="joga_mouse(23)" onmouseenter="aux_texto_fala('b3', 23)"><p> </p></td>
+	<td class="preto" id="33" onclick="joga_mouse(33)" onmouseenter="aux_texto_fala('c3', 33)"><p> </p></td>
+	<td class="branco" id="43" onclick="joga_mouse(43)" onmouseenter="aux_texto_fala('d3', 43)"><p> </p></td>
+	<td class="preto" id="53" onclick="joga_mouse(53)" onmouseenter="aux_texto_fala('e3', 53)"><p> </p></td>
+	<td class="branco" id="63" onclick="joga_mouse(63)" onmouseenter="aux_texto_fala('f3', 63)"><p> </p></td>
+	<td class="preto" id="73" onclick="joga_mouse(73)" onmouseenter="aux_texto_fala('g3', 73)"><p> </p></td>
+	<td class="branco" id="83" onclick="joga_mouse(83)" onmouseenter="aux_texto_fala('h3', 83)"><p> </p></td>
+	<td class="tabuleiro_numeros">3</td>
+	</tr>
+	<tr>
+	<td class="branco" id="12" onclick="joga_mouse(12)" onmouseenter="aux_texto_fala('a2', 12)"><p class="peca_branca">&#9823</p></td>
+	<td class="preto" id="22" onclick="joga_mouse(22)" onmouseenter="aux_texto_fala('b2', 22)"><p class="peca_branca">&#9823</p></td>
+	<td class="branco" id="32" onclick="joga_mouse(32)" onmouseenter="aux_texto_fala('c2', 32)"><p class="peca_branca">&#9823</p></td>
+	<td class="preto" id="42" onclick="joga_mouse(42)" onmouseenter="aux_texto_fala('d2', 42)"><p class="peca_branca">&#9823</p></td>
+	<td class="branco" id="52" onclick="joga_mouse(52)" onmouseenter="aux_texto_fala('e2', 52)"><p class="peca_branca">&#9823</p></td>
+	<td class="preto" id="62" onclick="joga_mouse(62)" onmouseenter="aux_texto_fala('f2', 62)"><p class="peca_branca">&#9823</p></td>
+	<td class="branco" id="72" onclick="joga_mouse(72)" onmouseenter="aux_texto_fala('g2', 72)"><p class="peca_branca">&#9823</p></td>
+	<td class="preto" id="82" onclick="joga_mouse(82)" onmouseenter="aux_texto_fala('h2', 82)"><p class="peca_branca">&#9823</p></td>
+	<td class="tabuleiro_numeros">2</td>
+	</tr>
+	<tr>
+	<td class="preto" id="11" onclick="joga_mouse(11)" onmouseenter="aux_texto_fala('a1', 11)"><p class="peca_branca">&#9814</p></td>
+	<td class="branco" id="21" onclick="joga_mouse(21)" onmouseenter="aux_texto_fala('b1', 21)"><p class="peca_branca">&#9816</p></td>
+	<td class="preto" id="31" onclick="joga_mouse(31)" onmouseenter="aux_texto_fala('c1', 31)"><p class="peca_branca">&#9821</p></td>
+	<td class="branco" id="41" onclick="joga_mouse(41)" onmouseenter="aux_texto_fala('d1', 41)"><p class="peca_branca">&#9819</p></td>
+	<td class="preto" id="51" onclick="joga_mouse(51)" onmouseenter="aux_texto_fala('e1', 51)"><p class="peca_branca">&#9812</p></td>
+	<td class="branco" id="61" onclick="joga_mouse(61)" onmouseenter="aux_texto_fala('f1', 61)"><p class="peca_branca">&#9821</p></td>
+	<td class="preto" id="71" onclick="joga_mouse(71)" onmouseenter="aux_texto_fala('g1', 71)"><p class="peca_branca">&#9816</p></td>
+	<td class="branco" id="81" onclick="joga_mouse(81)" onmouseenter="aux_texto_fala('h1', 81)"><p class="peca_branca">&#9814</p></td>
+	<td class="tabuleiro_numeros">1</td>
+	</tr>
+	<tr>
+	<td class="tabuleiro_letras">a</td>
+	<td class="tabuleiro_letras">b</td>
+	<td class="tabuleiro_letras">c</td>
+	<td class="tabuleiro_letras">d</td>
+	<td class="tabuleiro_letras">e</td>
+	<td class="tabuleiro_letras">f</td>
+	<td class="tabuleiro_letras">g</td>
+	<td class="tabuleiro_letras">h</td>
+	<td class="tabuleiro_letras"> </td>
+	</tr>
+	</table>
+	</div> 
+	<div class="col-lg-3 col-md-3" id="relogio">
+	<div id="titulos_relogio">
+	<p class="texto_relogio" id="">Horas: </p>
+	<input type="number" value="00" min="00" max="20" id="horas" oninput="muda_hora_relogio()" onfocus="repete_frase('Edita hora')">
+	<p class="texto_relogio" id="">Minutos: </p>
+	<input type="number" value="00" min="00" max="59" id="minutos" oninput="muda_minutos_relogio()" onfocus="repete_frase('Edita minutos')">
+	<p class="texto_relogio" id="">Segundos: </p>
+	<input type="number" value="00" min="00" max="59" id="segundos" oninput="muda_segundos_relogio()" onfocus="repete_frase('Edita segundos')">
+	<div>
+	<button id="cancelar_tempo" class="btn btn-primary hidden-xs hidden-sm hidden-md hidden-lg" onmouseenter="repete_frase('Botão Cancelar edição do relogio')" onfocus="repete_frase('Botão Cancelar edição do relogio')" onfocus="repete_frase('Botão Cancelar edição do relogio')" onclick="mostra_relogio()">Cancelar <i class="fa fa-close" style="font-size: 16px; margin-left: 10px;"></i></button>
+	<button type="button" id="salvar_tempo_relogio" class="btn btn-primary" onmouseenter="repete_frase('Botão salvar tempo')" onfocus="repete_frase('Botão salvar tempo')" onfocusout="result_foco()" onclick="edita_tempo()">Salvar tempo<i class="glyphicon glyphicon-floppy-disk icones"></i></button>
+	</div>
+	</div>
+	<div id="tempo_jogadores">
+	<p id="jogador2">Jogador 2</p>
+	<p id="tempo_j2" onmouseenter="fala_tempo(2)">00:00:00</p>
+	<button id="pausa_relogio" onclick="pausar_relogio()" onmouseenter="repete_frase('botão pausar relógio')" class=".btn btn-danger">Pausar <i class="glyphicon glyphicon-pause" style="font-size: 24px; margin-left: 10px;"></i></button>
+	<p id="jogador1">Jogador 1</p>
+	<p id="tempo_j1" onmouseenter="fala_tempo(1)">00:00:00</p>
+	<p><button id="btn_edita_tempo" class="btn btn-primary" onclick="mostra_edita_tempo()" onmouseenter="repete_frase('Botão Editar tempo')" onfocus="repete_frase('Botão Editar tempo')">Editar tempo <i class="fa fa-cog" style="font-size: 20px; margin-left: 10px;"></i></button></p>
+	</div>
+	</div>
+</div> <!-- container -->
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="rodape">
+    <span>Copyright © 2018 The Freedom Chess. Todos os direitos reservados.</span>
+  </div>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	  <script type="text/javascript" src="jsvoz.js"></script>
+	  <script type="text/javascript" src="jsvoz2.js"></script>
+ </body>
+ </html>

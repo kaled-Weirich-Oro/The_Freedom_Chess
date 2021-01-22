@@ -1,0 +1,338 @@
+#fundo
+{
+	background:#000; 
+	position:fixed; 
+	width:100%;
+	height:100%;
+	z-index:999;
+	top:0;
+	left:0;
+	opacity:0.50;
+	-moz-opacity: 0.50;
+	filter: alpha(opacity=50);
+	display: none;
+	visibility: hidden;
+}
+#frase_dita
+{
+	font-size: 20px;
+}
+#frase_dita_peca
+{
+	font-size: 20px;
+	margin-left: 15px;
+}
+.preto{
+	background-color: black;
+	width: 65px;
+	height: 65px;
+}
+.branco {
+	background-color: white;
+	width: 65px;
+	height: 65px;
+}
+#var_aux
+{
+	visibility: hidden;
+	display: none;
+}
+.peca_branca {
+	font-size: 46px;
+	color: red;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+.peca_preta {
+	color: #1e23f9;
+	text-align: center;
+	font-size: 46px;
+	padding: 0px;
+	margin: 0px;
+}
+#tabuleiro {
+	border: 2px solid black;
+	margin: auto;
+	cursor: pointer;
+}
+#apagar_cordenada
+{
+	margin-left: 4%;
+}
+#result
+{
+	width: 35px;
+}
+#result2 
+{
+	width: 35px;
+}
+#btn
+{
+	margin-top: 20px;
+}
+#btn_revisar_jogo
+{
+	margin-top: 20px;
+	margin-left: 30%;
+	margin-bottom: 20px;
+}
+.casa_possivel
+{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #87ea9d;
+	margin: auto;
+}
+.casa_peca_possivel
+{
+	border-color: #40dc77;
+	border-style: solid;
+	border-width: 3px;
+}
+#rec {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #f91515;
+	margin-top: 15px;
+}
+#rec_peca {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #f91515;
+	margin-top: 10px;
+	margin-left: 15px;
+}
+.tabuleiro_numeros
+{
+	font-size: 25px;
+	width: 40px;
+	background-color: #d4eff3;
+	padding-left: 10px;
+}
+.tabuleiro_letras
+{
+	font-size: 25px;
+	width: 40px;
+	background-color: #d4eff3;
+	padding-top: 0;
+	text-align: center;	
+}
+#voltar_jogada
+{
+	visibility: hidden;
+	margin-top: 25px;
+	margin-left: 40%;
+}
+.lado_menu
+{
+	background-color: #cad1f1;
+}
+#jogador2
+{
+	font-size: 40px;
+	text-align: center;
+}
+#jogador1
+{
+	font-size: 40px;
+	text-align: center;
+	margin-top: 50px;
+}
+#tempo_j1
+{
+	font-size: 40px;
+	text-align: center;
+}
+#tempo_j2
+{
+	font-size: 40px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+#pausa_relogio
+{
+	font-size: 24px;
+	text-align: center;
+	margin-left: 25%;
+	padding: 0px;
+}
+#titulos_relogio
+{
+	margin-bottom: 30px;
+}
+.texto_relogio
+{
+	font-size: 23px;
+	font-family: arial;
+}
+#tempo_relogio
+{
+	display: inline;
+}
+#incremento_jogada
+{
+	width: 30px;
+}
+#incremento_titulo
+{
+	display: inline;
+}
+#tempo_jogadores
+{
+	margin-right: 20px;
+}
+#tempo_jogadores
+{
+	visibility: hidden;
+	display: none;
+}
+#salvar_tempo_relogio
+{
+	text-align: right;
+	margin-left: 12%;
+	margin-top: 25px;
+}
+#cancelar_tempo
+{
+	text-align: left;
+	margin-top: 25px;
+	margin-left: 2%;
+	background-color: #f96666;
+	border: 0;
+}
+#btn_edita_tempo
+{
+	text-align: right;
+	margin-left: 55%;
+	margin-top: 5px;
+}
+#relogio
+{
+	background-color: #dcf1ed;
+}
+#opcao1
+{
+	display: inline;
+	cursor: pointer !important;
+}
+#opcao2
+{
+	cursor: pointer !important;
+}
+#opcao3
+{
+	cursor: pointer !important;
+}
+.opcoes
+{
+	font-size: 14px;
+	font-weight: bold;
+	display: inline;
+}
+#opcao_cego
+{
+	width: 20px;
+	height: 20px;
+}
+#opcao_nomes_padrao
+{
+	width: 20px;
+	height: 20px;
+}
+#opcao_auxilia_jogada
+{
+	width: 20px;
+	height: 20px;
+}
+#promocao
+{
+	text-align: center;
+	background-color: #FFFFFF;
+	cursor: pointer;
+	left: 40%;
+}
+.peca_promocao
+{
+	font-size: 55px;
+}
+.pecas_promovidas
+{
+	position: fixed;
+	z-index: 9999;
+	visibility: hidden;
+	display: none;
+	background-color: #c3f9ef;
+}
+#pecas_promovidas_esquerda
+{
+	width: 290px;
+}
+#fala_peca_promovida
+{
+	width: 60px;
+}
+#btn_falar_peca
+{
+	margin-top: 10%;
+	margin-left: 5%;
+	display: inline;
+}
+.icones {
+	margin-left: 10px;
+	font-size: 20px;
+}
+.icones_informacao {
+	margin-left: 10px;
+	font-size: 20px;
+	cursor: pointer;
+	position: relative;
+}
+.informacoes {
+	visibility: hidden;
+	position: absolute;
+	width: 300px;
+	border-radius: 20px;
+	background-color: #fcf8e3;
+	z-index: 1;
+	padding: 5px;
+}
+.icones_informacao:hover #texto_informacao_falar {
+	visibility: visible;
+	transition: 2s;
+}
+.icones_informacao:hover #texto_informacao_digitacao {
+	visibility: visible;
+	transition: 2s;
+}
+.icones_informacao:hover #texto_informacao_apagar_coordenada {
+	visibility: visible;
+	transition: 2s;
+}
+.icones_informacao:hover #texto_informacao_opcao1 {
+	visibility: visible;
+	transition: 2s;
+}
+.icones_informacao:hover #texto_informacao_opcao2 {
+	visibility: visible;
+	transition: 2s;
+}
+.icones_informacao:hover #texto_informacao_opcao3 {
+	visibility: visible;
+	transition: 2s;
+}
+.icones_informacao:hover #texto_informacao_revisar_jogo {
+	visibility: visible;
+	transition: 2s;
+}
+#rodape {
+	font-size: 14px;
+	text-align: center;
+	margin-bottom: 0px;
+	font-weight: bold;
+	margin-top: 2.5%;
+}
